@@ -10,24 +10,28 @@ const initUserList = [
     value: "Kun",
     score: 0,
     isMain: false,
+    isDouble: false,
   },
   {
     label: "He",
     value: "He",
     score: 0,
     isMain: false,
+    isDouble: false,
   },
   {
     label: "Chao",
     value: "Chao",
     score: 0,
     isMain: false,
+    isDouble: false,
   },
   {
     label: "Hao",
     value: "Hao",
     score: 0,
     isMain: false,
+    isDouble: false,
   },
 ];
 
@@ -97,11 +101,7 @@ const ScoreList = () => {
           </Button>
         </Space>
       </div>
-      <AddScore
-        ref={addRef}
-        userList={initUserList}
-        changeScore={changeScore}
-      />
+      <AddScore ref={addRef} userList={userList} changeScore={changeScore} />
     </div>
   );
 };
