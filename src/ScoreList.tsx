@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Button, List, Space, Modal } from "antd";
+import { Button, List, Space, Modal, Flex } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import AddScore from "./AddScore.tsx";
 import { produce } from "immer";
@@ -82,9 +82,10 @@ const ScoreList = () => {
         )}
       />
       <div style={{ marginTop: 20 }}>
-        <Space>
+        <Flex gap="middle" vertical>
           <Button
             icon={<PlusOutlined />}
+            type="primary"
             onClick={() => addRef?.current.show()}
           >
             结算
@@ -99,7 +100,7 @@ const ScoreList = () => {
           >
             清除记录
           </Button>
-        </Space>
+        </Flex>
       </div>
       <AddScore ref={addRef} userList={userList} changeScore={changeScore} />
     </div>

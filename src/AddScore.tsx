@@ -13,7 +13,7 @@ import {
   ProFormSelect,
   ProFormSwitch,
 } from "@ant-design/pro-components";
-import { Button, Form, Space } from "antd";
+import { Button, Flex, Form } from "antd";
 
 interface AddScoreProps {
   userList: any[];
@@ -164,20 +164,19 @@ const AddScore = forwardRef<AddScoreRefProps, AddScoreProps>(
               },
             ]}
           />
-          <div style={{ marginBottom: 16 }}>
-            <Space>
-              {baseScoreOptions.map((item: any) => (
-                <Button
-                  size="small"
-                  onClick={() => {
-                    addForm.setFieldValue("score", item.value);
-                  }}
-                >
-                  {item.name} +{item.value}
-                </Button>
-              ))}
-            </Space>
-          </div>
+          <Flex wrap gap="small" style={{ paddingBottom: 16 }}>
+            {baseScoreOptions.map((item: any) => (
+              <Button
+                size="small"
+                onClick={() => {
+                  addForm.setFieldValue("score", item.value);
+                }}
+                // style={{ width: 70, marginRight: 10, marginBottom: 10 }}
+              >
+                {item.name} +{item.value}
+              </Button>
+            ))}
+          </Flex>
           {/* 胡 */}
           <ProFormSelect
             name="winner"
